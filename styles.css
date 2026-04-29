@@ -374,7 +374,48 @@ footer{
     align-items: center;
     margin-left: 27px;
     margin-top: 50px;
-    font-size: 23px;
+    font-size: 23px; 
+}
+
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-trigger {
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    top: 110%; 
+    left: 0;
+}
+
+
+.dropdown-content.show {
+    display: block;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #e0e0e0;
 }
 
 @media (orientation: portrait) {
@@ -384,3 +425,5 @@ footer{
     }
 
 }
+
+

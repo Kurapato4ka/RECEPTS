@@ -15,7 +15,14 @@
             </div>
             <div class="search-container">
                 <input placeholder="Поиск по рецептам" type="text" style="width: 487px;height: 52px; font-size: 18px;" class="search-input">
-                <a class="header-link" href="#"><img src="spisok.png"></a>
+                <div class="dropdown-container"><img src="spisok.png" alt="Меню" class="menu-trigger" id="triggerImage">
+                    <div class="dropdown-content" id="myDropdown">
+                        <a href="#">Первые блюда</a>
+                        <a href="#">Вторые блюда</a>
+                        <a href="#">Напитки</a>
+                        <a href="#">Соусы</a>
+                    </div>
+                </div>
             </div>
             <div class="second">
                 <div class="bottom">
@@ -60,5 +67,7 @@
             <img src="goodname.png" style="width:86px; height:57px">
         </div>
     </footer>
+
+    <script src="first.js"></script>
 </body>
 </html>
