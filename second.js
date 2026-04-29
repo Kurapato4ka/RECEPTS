@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-const recepts={1:{img:"image 4.png",text:"Текст ДОБАВИТЬ"},
+const recipes={1:{img:"image 4.png",text:"Текст ДОБАВИТЬ"},
              2:{img:"image 5.png",text:"Текст ДОБАВИТЬ"},
              3:{img:"image 6.png",text:"Текст ДОБАВИТЬ"}};
 
@@ -29,10 +29,8 @@ if(!recipes[id]){
     document.body.innerHTML = "<h1>Рецепт не найден</h1>"
 }
 else{
-    document.getElementById("text").textContent = recepts[id].text;
-    document.getElementById("img").src = recepts[id].img
+    document.getElementById("text").textContent = recipes[id].text;
+    document.getElementById("img").src = recipes[id].img
 };
 
 
-
-let logo = document

@@ -16,3 +16,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+let poisk = document.querySelector(".search-input");
+let cards = document.querySelectorAll(".card");
+
+poisk.addEventListener('input', function(){
+    let value = poisk.value.toLowerCase();
+    cards.forEach(card => { 
+        let text = card.innerText.toLowerCase();
+        if(text.includes(value)){card.style.display = "block"}
+        else{card.style.display = "none"}
+    });
+})
