@@ -37,3 +37,10 @@ else{
 };
 
 
+if (window.matchMedia("(orientation: portrait)").matches) {
+    const searchInput = document.querySelector('.search-input');
+    if (searchInput) {
+        searchInput.placeholder = "Поиск";
+    }
+}
+

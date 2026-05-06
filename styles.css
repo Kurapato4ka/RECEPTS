@@ -31,9 +31,10 @@ header {
     height: 100px;
     display: flex;
     align-items: center;
-    padding: 0 20px; /* Добавляем отступы по бокам, чтобы элементы не прилипали к краям */
-    
+    padding: 0 20px;
+    position: relative; /* ← ВАЖНО! */
 }
+
 
 .header-inner {
     width: 100%;
@@ -62,13 +63,17 @@ header {
 }
 
 .search-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     align-items: center;
     background-color: #ffffff;
-    border-radius: 20px; 
+    border-radius: 20px;
     padding: 8px 15px;
-    width: 350px; 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+    width: 350px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 10; /* Чтобы был поверх других элементов при необходимости */
 }
 
 
@@ -93,14 +98,6 @@ header {
     opacity: 0.7;
 }
 
-.bottom {
-    border: 1px solid #ffffff;
-    border-radius: 8px;
-    padding: 10px 18px;
-    background-color: #ffffff;
-    cursor: pointer;
-    font-size: 23px;
-}
 
 img {
     max-width: 100%;
@@ -247,134 +244,114 @@ footer{
 
 }
 
-/* Адаптивность для мобильных устройств (вертикальная ориентация) */
+
 @media (orientation: portrait) {
-    
-    /* 1. Шапка: максимально компактная */
     header {
         height: auto;
-        padding: 6px 8px; /* Минимальные отступы */
+        padding: 8px 10px;
     }
-
     .header-inner {
-        gap: 4px; /* Очень маленький зазор между левой и правой частью */
+        gap: 8px;
     }
-
     .start {
-        gap: 6px; /* Лого + поиск близко друг к другу */
+        gap: 8px;
     }
-
-    /* Поиск — очень узкий */
     .search-container {
-        width: 100px; /* Было 350px → теперь 100px */
-        min-width: 80px;
-        padding: 3px 6px;
-        border-radius: 12px;
+        width: 180px; 
+        min-width: 160px;
+        padding: 6px 12px;
+        border-radius: 15px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-
     .search-input {
-        font-size: 10px; /* Микроскопический шрифт */
-        padding: 1px;
+        font-size: 10px; 
+        padding: 2px 4px;
+        width: 140px; 
+        max-width: 140px;
+        flex-grow: 0; 
+        background-color: transparent; 
     }
-
-    /* Правая часть меню */
     .second {
-        gap: 6px; /* Ссылки почти вплотную */
+        gap: 8px;
         margin-right: 0;
     }
-
     .header-link {
-        font-size: 11px; /* Микро-шрифт */
+        font-size: 13px;
         white-space: nowrap;
     }
-
     .bottom {
-        font-size: 12px;
-        padding: 3px 6px;
-        border-radius: 4px;
+        font-size: 14px;
+        padding: 4px 8px;
+        border-radius: 6px;
     }
-
-    /* 2. Карточки рецептов */
     .cards {
         flex-direction: column;
-        margin: 15px auto;
-        gap: 25px;
+        margin: 20px auto;
+        gap: 30px;
         width: 100%;
-        padding: 0 10px;
+        padding: 0 15px;
         box-sizing: border-box;
         margin-left: 0;
         margin-right: 0;
     }
-
     .card {
         width: 100%;
-        max-width: 380px;
-        height: auto;
-        margin: 0 auto;
-        overflow: hidden; /* Обрезает всё лишнее */
-        border-radius: 20px; /* Убедимся, что карточка скруглена */
-    }
-
-    /* ИСПРАВЛЕНИЕ ЗАКРУГЛЕНИЯ КАРТИНКИ */
-    .card_img {
-        width: 100%;
-        height: 180px; /* Чуть меньше высота */
-        object-fit: cover;
-        border-top-left-radius: 20px;   /* Совпадает с card */
-        border-top-right-radius: 20px;  /* Совпадает с card */
-        display: block;
-    }
-
-    .names {
-        font-size: 18px;
-        padding-left: 12px;
-        padding-top: 12px;
-        margin-bottom: 8px;
-    }
-
-    .card_txt {
-        font-size: 14px;
-        line-height: 1.3;
-        padding-left: 12px;
-        padding-right: 12px;
-        margin-bottom: 15px;
-    }
-
-    .bottom_card {
-        margin: 10px auto 20px auto;
-        width: 70%;
-        max-width: 160px;
-        justify-content: center;
-        font-size: 16px;
-        height: 40px;
-        border-radius: 8px;
-    }
-
-    /* 3. Страница рецепта */
-    .recept {
-        width: 90%;
         max-width: 400px;
         height: auto;
-        margin: 15px auto;
-        padding-bottom: 15px;
+        margin: 0 auto;
         overflow: hidden;
         border-radius: 20px;
     }
-
+    .card_img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        display: block;
+    }
+    .names {
+        font-size: 20px;
+        padding-left: 15px;
+        padding-top: 15px;
+        margin-bottom: 10px;
+    }
+    .card_txt {
+        font-size: 16px;
+        line-height: 1.4;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-bottom: 20px;
+    }
+    .bottom_card {
+        margin: 15px auto 25px auto;
+        width: 75%;
+        max-width: 180px;
+        justify-content: center;
+        font-size: 18px;
+        height: 45px;
+        border-radius: 8px;
+    }
+    .recept {
+        width: 90%;
+        max-width: 450px;
+        height: auto;
+        margin: 20px auto;
+        padding-bottom: 20px;
+        overflow: hidden;
+        border-radius: 20px;
+    }
     .recept img {
         width: 100%;
         border-top-left-radius: 20px;
         border-top-right-radius: 20px;
         display: block;
     }
-
-    /* 4. Подвал */
     footer {
         height: auto;
-        padding: 10px;
-        margin-top: 20px;
+        padding: 15px;
+        margin-top: 30px;
     }
-
     .footer-inner {
         justify-content: center;
         margin-right: 0;
