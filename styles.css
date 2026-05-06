@@ -247,12 +247,136 @@ footer{
 
 }
 
+/* Адаптивность для мобильных устройств (вертикальная ориентация) */
 @media (orientation: portrait) {
-    .cards{
-        flex-direction: column;
-        align-items: center;
+    
+    /* 1. Шапка: максимально компактная */
+    header {
+        height: auto;
+        padding: 6px 8px; /* Минимальные отступы */
     }
 
+    .header-inner {
+        gap: 4px; /* Очень маленький зазор между левой и правой частью */
+    }
+
+    .start {
+        gap: 6px; /* Лого + поиск близко друг к другу */
+    }
+
+    /* Поиск — очень узкий */
+    .search-container {
+        width: 100px; /* Было 350px → теперь 100px */
+        min-width: 80px;
+        padding: 3px 6px;
+        border-radius: 12px;
+    }
+
+    .search-input {
+        font-size: 10px; /* Микроскопический шрифт */
+        padding: 1px;
+    }
+
+    /* Правая часть меню */
+    .second {
+        gap: 6px; /* Ссылки почти вплотную */
+        margin-right: 0;
+    }
+
+    .header-link {
+        font-size: 11px; /* Микро-шрифт */
+        white-space: nowrap;
+    }
+
+    .bottom {
+        font-size: 12px;
+        padding: 3px 6px;
+        border-radius: 4px;
+    }
+
+    /* 2. Карточки рецептов */
+    .cards {
+        flex-direction: column;
+        margin: 15px auto;
+        gap: 25px;
+        width: 100%;
+        padding: 0 10px;
+        box-sizing: border-box;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 380px;
+        height: auto;
+        margin: 0 auto;
+        overflow: hidden; /* Обрезает всё лишнее */
+        border-radius: 20px; /* Убедимся, что карточка скруглена */
+    }
+
+    /* ИСПРАВЛЕНИЕ ЗАКРУГЛЕНИЯ КАРТИНКИ */
+    .card_img {
+        width: 100%;
+        height: 180px; /* Чуть меньше высота */
+        object-fit: cover;
+        border-top-left-radius: 20px;   /* Совпадает с card */
+        border-top-right-radius: 20px;  /* Совпадает с card */
+        display: block;
+    }
+
+    .names {
+        font-size: 18px;
+        padding-left: 12px;
+        padding-top: 12px;
+        margin-bottom: 8px;
+    }
+
+    .card_txt {
+        font-size: 14px;
+        line-height: 1.3;
+        padding-left: 12px;
+        padding-right: 12px;
+        margin-bottom: 15px;
+    }
+
+    .bottom_card {
+        margin: 10px auto 20px auto;
+        width: 70%;
+        max-width: 160px;
+        justify-content: center;
+        font-size: 16px;
+        height: 40px;
+        border-radius: 8px;
+    }
+
+    /* 3. Страница рецепта */
+    .recept {
+        width: 90%;
+        max-width: 400px;
+        height: auto;
+        margin: 15px auto;
+        padding-bottom: 15px;
+        overflow: hidden;
+        border-radius: 20px;
+    }
+
+    .recept img {
+        width: 100%;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        display: block;
+    }
+
+    /* 4. Подвал */
+    footer {
+        height: auto;
+        padding: 10px;
+        margin-top: 20px;
+    }
+
+    .footer-inner {
+        justify-content: center;
+        margin-right: 0;
+    }
 }
-
-
