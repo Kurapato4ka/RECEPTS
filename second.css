@@ -1,0 +1,53 @@
+.card{
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+    width: 500px;
+    height: 600px;
+    background-color: #D9D9D9;
+
+}
+
+.card_txt{
+    font-size: 23px; 
+    font-weight: 400;
+    line-height: 30px;
+    margin-bottom: 25px;
+    padding-left: 27px;
+}
+
+
+.card_img{
+    width: 500px;
+    height: 340px;
+    overflow: hidden;
+    
+    
+}
+
+.names{
+    font-size: 25px; 
+    font-weight: 600;
+    margin-bottom: 14.5px;
+    padding-left: 27px;
+    padding-top: 18px;
+}
+
+
+.cards{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    gap: 73.63px;
+    margin-right: 96px;
+    margin-top: 64px;
+    margin-left: 96px;
+}
+
+.recept{
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+    width: 500px;
+    height: 600px;
+    background-color: #D9D9D9;
+
+}

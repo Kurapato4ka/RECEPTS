@@ -18,9 +18,9 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-const recipes={1:{img:"image 4.png",text:"Текст ДОБАВИТЬ"},
-             2:{img:"image 5.png",text:"Текст ДОБАВИТЬ"},
-             3:{img:"image 6.png",text:"Текст ДОБАВИТЬ"}};
+const recipes={1:{img:"image 4.png",text:"Текст ДОБАВИТЬ",names: "Блины",sost:"Состав: яйца, сахар, соль, молоко, мука, растительное масло" },
+               2:{img:"image 5.png",text:"Текст ДОБАВИТЬ",names: "Сырники",sost:"Состав: творог, яйцо, сахар, мука, ванильный сахар, соль, растительное масло"},
+               3:{img:"image 6.png",text:"Текст ДОБАВИТЬ",names: "Шарлотка",sost:"Состав: яйца, сахар, мука, яблоки, разрыхлитель теста, ванилин, сливочное масло"}};
 
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
@@ -30,6 +30,8 @@ if(!recipes[id]){
 }
 else{
     document.getElementById("text").textContent = recipes[id].text;
+    document.getElementById("names").textContent = recipes[id].names;
+    document.getElementById("sost").textContent = recipes[id].sost;
     document.getElementById("img").src = recipes[id].img
 };
 

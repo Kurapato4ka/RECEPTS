@@ -250,7 +250,7 @@ footer{
     background-color: #C7C7C7;
     display: flex;
     align-items: center;
-    margin-top: 96px;
+    margin-top: 88px;
     
 }
 
@@ -288,74 +288,6 @@ footer{
     color: #000;
     text-decoration: underline;
 }
-
-
-
-
-.services {
-    width: 1506px;
-    height: 644px;
-  
-    margin: 64px 207px 96px 207px; 
-  
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-areas:
-      "a b c"
-      "d e e";
-  
-    background: #ffffff;
-    border-radius: 30px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.10);
-    overflow: hidden;
-  }
-  
-  .a { grid-area: a; }
-  .b { grid-area: b; }
-  .c { grid-area: c; }
-  .d { grid-area: d; }
-  .e { grid-area: e; }
-  
-  .service-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-right: 1px solid #909090;
-    border-bottom: 1px solid #909090;
-    flex-direction: column;
-    flex-wrap: nowrap;
-  }
-  
-  
-  .c, .e {
-    border-right: none;
-  }
-  
-  .d, .e {
-    border-bottom: none;
-  }
-  
-
-  .big{
-    font-size: 24px; 
-    font-weight: 700;
-    padding-bottom: 15px;
-    padding-top: 90px;
-  }
-
-  .cost{
-    font-size: 24px; 
-    font-weight: 500;
-    padding-bottom: 67px;
-  }
-
-  .more{
-    color: #000000b3;
-    font-size: 16px; 
-    font-weight: 400;
-  }
-
 
   body::-webkit-scrollbar {      /* для Chrome/Safari/Edge */
     display: none;
@@ -419,6 +351,16 @@ footer{
 .dropdown-content a:hover {
     background-color: #e0e0e0;
 }
+
+.recept{
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+    width: 800px;
+    height: 600px;
+    background-color: #D9D9D9;
+
+}
+
 
 @media (orientation: portrait) {
     .cards{
