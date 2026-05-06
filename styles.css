@@ -82,23 +82,6 @@ header {
     color: #333;
 }
 
-.header-right {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 32px;
-    font-size: 16px;
-}
-
-.links{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 60px;
-    font-size: 16px;
-}
 
 .header-link {
     text-decoration: none;
@@ -119,60 +102,10 @@ header {
     font-size: 23px;
 }
 
-main{
-    margin: 0;
-    padding: 0 96px;
-    padding-top: 20px;
-}
-
-
 img {
     max-width: 100%;
     height: auto;
 }
-
-.texts{
-    padding-top: 120px;
-    padding-left: 111px;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    justify-content: center;
-
-
-}
-
-.cover_title{
-    font-family: "Playfair Display SC";
-    font-size: 150px;
-    font-weight: 400;
-    padding-bottom: 14px;
-}
-
-.texts p {
-    white-space: pre-line;
-}
-
-
-.line {
-    width: 100%;
-    height: 94px;
-    background-color: #FFF2DE;
-
-    display: flex;
-    align-items: center;    
-    justify-content: flex-start; 
-    padding-left: 96px;  
-    font-size: 40px; 
-    font-weight: 500;     
-}
-
-.first{
-    margin-top: 114px;
-    align-items: center;
-}
-
-
 
 .cards{
     display: flex;
@@ -221,29 +154,6 @@ img {
     
 }
 
-
-
-.card2{
-    width: 520px;
-    height: 267px;
-    border-radius: 26px;
-    overflow: hidden;
-    background-color: #FFF2DE;
-}
-
-.names2{
-    font-size: 24px; 
-    font-weight: 500;
-    line-height: 100%;
-    margin-bottom: 13.5px;
-}
-
-.card_txt2{
-    font-size: 20px; 
-    font-weight: 400;
-}
-
-
 footer{
     width: 100%;
     height: 100px;
@@ -254,29 +164,10 @@ footer{
     
 }
 
-.contacts{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 32px;
-}
-
-
-
-.end{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
-    align-items: center;
-    font-size: 16px;
-    
-}
-
 .footer-inner{
     
-    width: 100%;        /* растягиваем на всю ширину футера */
-    margin: 0 auto;     /* центрируем внутри футера */
+    width: 100%;    
+    margin: 0 auto;     
     display: flex;
     justify-content: end;
     align-items: center;
@@ -284,12 +175,7 @@ footer{
     margin-right: 30px;
 }
 
-.contacts a {
-    color: #000;
-    text-decoration: underline;
-}
-
-  body::-webkit-scrollbar {      /* для Chrome/Safari/Edge */
+  body::-webkit-scrollbar {      
     display: none;
 }
 
@@ -360,7 +246,6 @@ footer{
     background-color: #D9D9D9;
 
 }
-
 
 @media (orientation: portrait) {
     .cards{
