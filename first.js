@@ -36,3 +36,25 @@ if (window.matchMedia("(orientation: portrait)").matches) {
         searchInput.placeholder = "Поиск";
     }
 }
+
+const containers = document.querySelectorAll('.cont');
+
+containers.forEach(container => {
+    const card = container.querySelector('.card');
+
+    container.addEventListener('mousemove', function(e) {
+        const rect = container.getBoundingClientRect();
+
+        let dx = e.clientX - rect.left - rect.width / 2;
+        let dy = e.clientY - rect.top - rect.height / 2;
+
+        let angleX = 20 * dx / rect.width;
+        let angleY = -20 * dy / rect.height;
+
+        card.style.transform = `rotateX(${angleY}deg) rotateY(${angleX}deg)`;
+    });
+
+    container.addEventListener('mouseleave', function() {
+        card.style.transform = `rotateX(0deg) rotateY(0deg)`;
+    });
+});
